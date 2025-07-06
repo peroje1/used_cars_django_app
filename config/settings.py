@@ -64,8 +64,9 @@ MIDDLEWARE = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    *MIDDLEWARE,
+    # ... other middlewares ...
 ]
 
 ROOT_URLCONF = 'config.urls'
