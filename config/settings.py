@@ -30,10 +30,14 @@ SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret-for-dev")
 
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost").split(",")
+ALLOWED_HOSTS = [
+    'used-cars-django-app.onrender.com',
+    'www.used-cars-django-app.onrender.com',  # optional
+]
+
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.config(default=os.getenv("DATABASE_URL"))
 }
 
 
