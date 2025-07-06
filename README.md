@@ -12,15 +12,18 @@
 
 ### Technologies Used
 
-- **Python** — core programming language  
-- **Django** — web framework for backend development  
-- **SQLite / PostgreSQL** — relational database (SQLite by default, PostgreSQL optional)  
-- **Django ORM** — database modeling and queries  
-- **HTML5 / CSS3 / Bootstrap** — frontend markup and responsive styling  
-- **Plotly.js** — interactive charts and data visualization  
-- **Git & GitHub** — version control and remote repository hosting  
-- **pip & virtualenv (.venv)** — Python package and environment management  
+### Technologies Used
+
+- **Python 3.10.6** —
+- **Django 5.2.3** — 
+- **SQLite / PostgreSQL** — (SQLite by default, PostgreSQL optional)  
+- **Django ORM** — 
+- **HTML5 / CSS3 / Bootstrap** — 
+- **Plotly.js 6.2.0** — 
+- **Git & GitHub** — 
+- **pip & virtualenv (.venv)** —   
 - **Django Authentication System** — user registration, login, and permission management  
 - **Django Forms** — for data input, validation, and CRUD operations  
 - **Django Templates** — for dynamic HTML rendering  
 - **PyCharm** — integrated development environment (IDE) used for coding  
+
