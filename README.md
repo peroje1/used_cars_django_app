@@ -12,8 +12,6 @@
 
 ### Technologies Used
 
-### Technologies Used
-
 - **Python 3.10.6** 
 - **Django 5.2.3** 
 - **SQLite / PostgreSQL** — (SQLite by default, PostgreSQL optional)  
