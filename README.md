@@ -14,14 +14,14 @@
 
 ### Technologies Used
 
-- **Python 3.10.6** —
-- **Django 5.2.3** — 
+- **Python 3.10.6** 
+- **Django 5.2.3** 
 - **SQLite / PostgreSQL** — (SQLite by default, PostgreSQL optional)  
-- **Django ORM** — 
-- **HTML5 / CSS3 / Bootstrap** — 
-- **Plotly.js 6.2.0** — 
-- **Git & GitHub** — 
-- **pip & virtualenv (.venv)** —   
+- **Django ORM** 
+- **HTML5 / CSS3 / Bootstrap**
+- **Plotly.js 6.2.0** 
+- **Git & GitHub** 
+- **pip & virtualenv (.venv)** 
 - **Django Authentication System** — user registration, login, and permission management  
 - **Django Forms** — for data input, validation, and CRUD operations  
 - **Django Templates** — for dynamic HTML rendering  
