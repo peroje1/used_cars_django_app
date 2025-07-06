@@ -25,5 +25,5 @@
 - **Django Authentication System** — user registration, login, and permission management  
 - **Django Forms** — for data input, validation, and CRUD operations  
 - **Django Templates** — for dynamic HTML rendering  
-- **PyCharm** — integrated development environment (IDE) used for coding  
+- **PyCharm** 
 
