@@ -36,8 +36,6 @@ coverage.xml
 *.pot
 *.log
 local_settings.py
-db.sqlite3
-media/
 staticfiles/
 instance/
 .webassets-cache
