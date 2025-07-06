@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="d-flex justify-content-end mb-3">
+  <a href="{% url 'car_list' %}" class="btn btn-outline-light">Back to Home</a>
+</div>
+
+<hr class="my-5">
+<h2 class="mb-4">Dashboard</h2>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+
+  <div class="col">
+    <div class="card bg-secondary text-white shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Cars per Brand (Pie)</h5>
+        {{ chart_pie|safe }}
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card bg-secondary text-white shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Average Price per Brand</h5>
+        {{ chart_avg|safe }}
+      </div>
+    </div>
+  </div>
+
+  {% if chart_year %}
+  <div class="col">
+    <div class="card bg-secondary text-white shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Cars per Year</h5>
+        {{ chart_year|safe }}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+
+{% endblock %}

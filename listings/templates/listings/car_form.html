@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{% if edit_mode %}Edit Car{% else %}Add a New Car{% endif %}</h1>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">
+      {% if edit_mode %}Update{% else %}Add{% endif %}
+    </button>
+    <a href="{% url 'car_list' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

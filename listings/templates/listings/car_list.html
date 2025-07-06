@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1 class="mb-4">Used Cars</h1>
+
+  <!-- Filter Form -->
+  <div class="card p-4 mb-4">
+    <form method="get" class="row g-3 align-items-end">
+      <div class="col-md-3">
+        <label for="brand" class="form-label">Brand</label>
+        <select name="brand" id="brand" class="form-select">
+          <option value="All">All</option>
+          {% for b in brands %}
+            <option value="{{ b }}" {% if filters.brand == b %}selected{% endif %}>{{ b }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="col-md-2">
+        <label for="min_year" class="form-label">Min Year</label>
+        <input id="min_year" type="number" class="form-control" name="min_year" inputmode="numeric" min="0" pattern="\d*" value="{{ filters.min_year }}">
+      </div>
+
+      <div class="col-md-2">
+        <label for="max_year" class="form-label">Max Year</label>
+        <input id="max_year" type="number" class="form-control" name="max_year" inputmode="numeric" min="0" pattern="\d*" value="{{ filters.max_year }}">
+      </div>
+
+      <div class="col-md-2">
+        <label for="min_price" class="form-label">Min Price</label>
+        <input id="min_price" type="number" class="form-control" name="min_price" inputmode="numeric" min="0" pattern="\d*" value="{{ filters.min_price }}">
+      </div>
+
+      <div class="col-md-2">
+        <label for="max_price" class="form-label">Max Price</label>
+        <input id="max_price" type="number" class="form-control" name="max_price" inputmode="numeric" min="0" pattern="\d*" value="{{ filters.max_price }}">
+      </div>
+
+      <div class="col-md-1 d-grid">
+        <button type="submit" class="btn btn-primary">Filter</button>
+      </div>
+    </form>
+  </div>
+
+  <p class="text-muted">{{ total_results }} results found</p>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for car in cars %}
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0 rounded-4 bg-dark-subtle text-light">
+          {% if car.image %}
+            <img src="{{ car.image.url }}" alt="{{ car.brand }} logo" class="img-fluid p-3 mx-auto d-block" style="max-height: 120px; object-fit: contain;">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title d-flex justify-content-between">
+              {{ car.brand }} {{ car.model }}
+              <span class="badge bg-secondary">{{ car.year }}</span>
+            </h5>
+            <p class="card-text">
+              <strong>Price:</strong> ${{ car.price }}<br>
+              <strong>Mileage:</strong> {{ car.mileage }} km
+            </p>
+            <a href="{% url 'car_detail' car.id %}" class="btn btn-outline-light btn-sm">View Details</a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No cars found for selected filters.</p>
+    {% endfor %}
+  </div>
+
+<nav aria-label="Car pagination" class="mt-4">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}&{{ request.GET.urlencode|cut:'page=' }}" aria-label="Previous">
+          &laquo;
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+      {% if page_obj.number == num %}
+        <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+      {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ num }}&{{ request.GET.urlencode|cut:'page=' }}">{{ num }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}&{{ request.GET.urlencode|cut:'page=' }}" aria-label="Next">
+          &raquo;
+        </a>
+      </li>
+    {% else %}
+      <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+    {% endif %}
+  </ul>
+</nav>
+
+{% endblock %}

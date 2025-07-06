@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card bg-dark-subtle text-light border-0 shadow rounded-4 p-4">
+  <div class="row g-4">
+    <div class="col-md-5 text-center">
+      {% if car.image %}
+        <img src="{{ car.image.url }}" alt="{{ car.brand }} logo" class="img-fluid rounded" style="max-height: 250px; object-fit: contain;">
+      {% endif %}
+    </div>
+
+    <div class="col-md-7">
+      <h2 class="mb-3">{{ car.brand }} {{ car.model }}</h2>
+      <ul class="list-unstyled mb-4">
+        <li><strong>Year:</strong> {{ car.year }}</li>
+        <li><strong>Price:</strong> ${{ car.price }}</li>
+        <li><strong>Mileage:</strong> {{ car.mileage }} km</li>
+        <li><strong>City:</strong> {{ car.city }}</li>
+      </ul>
+      <p class="fst-italic">{{ car.description }}</p>
+
+      {% if user == car.owner %}
+        <a href="{% url 'edit_car' car.id %}" class="btn btn-warning me-2">Edit</a>
+        <a href="{% url 'delete_car' car.id %}" class="btn btn-danger">Delete</a>
+      {% endif %}
+
+      <br>
+      <a href="{% url 'car_list' %}" class="btn btn-outline-light mt-3">← Back to Listings</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
