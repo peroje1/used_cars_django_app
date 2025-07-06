@@ -25,3 +25,16 @@
 - **Django Templates** — for dynamic HTML rendering  
 - **PyCharm** 
 
+### Key Features
+
+#### Browse & Filter Listings  
+![Browse Listings](screenshots/Homepage.jpg)
+
+#### Car Detail View  
+![Car Detail](screenshots/Carpage.jpg)
+
+#### Add/Edit Car Form  
+![Add/Edit Form](screenshots/Add.edit.jpg)
+
+#### Interactive Dashboard  
+![Dashboard](screenshots/Dashboard.jgg)
