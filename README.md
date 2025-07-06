@@ -37,4 +37,4 @@
 ![Add/Edit Form](screenshots/Add.edit.jpg)
 
 #### Interactive Dashboard  
-![Dashboard](screenshots/Dashboard.jgg)
+![Dashboard](screenshots/Dashboard.jpg)
