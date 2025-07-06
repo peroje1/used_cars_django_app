@@ -1,2 +1,1 @@
-web: gunicorn used_cars_web.config.wsgi
-
+web: gunicorn config.wsgi
