@@ -25,7 +25,7 @@
 - **Git & GitHub** 
 - **pip & virtualenv (.venv)** 
 - **Django Authentication System** — user registration, login, and permission management  
-- **Django Forms** — for data input, validation, and CRUD operations  
+- **Django Forms** — for data input, validation and CRUD operations  
 - **Django Templates** — for dynamic HTML rendering  
 - **PyCharm** 
 
